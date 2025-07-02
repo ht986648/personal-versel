@@ -1,3 +1,6 @@
+Here is the **final formatted `README.md` code** with proper image embedding. Replace the placeholder image paths (`./screenshots/...`) with the actual image filenames once they're available:
+
+```md
 # 🚀 Vercel-Like Monorepo
 
 A monorepo for a Vercel-inspired deployment platform. Clone, upload, deploy, and run static sites from any public git repository, with a modern web UI and scalable backend.
@@ -6,14 +9,14 @@ A monorepo for a Vercel-inspired deployment platform. Clone, upload, deploy, and
 
 ## 🏗️ Architecture
 
-- **📤 uploadService**:  
-  - Accepts a git repository URL, clones it, and uploads the contents to a Cloudflare R2 bucket ☁️.
+- **📤 uploadService**  
+  - Accepts a git repository URL, clones it, and uploads the contents to a Cloudflare R2 bucket ☁️.  
   - Uses Redis for build queueing and status tracking 🗃️.
-- **⚙️ deployment-service**:  
+- **⚙️ deployment-service**  
   - Listens to the Redis build queue, downloads files from R2, builds the project, and uploads the final static site to R2 🚀.
-- **🌐 request-handler-service**:  
+- **🌐 request-handler-service**  
   - Serves deployed static sites from R2, acting as a CDN edge (can be fronted by CloudFront or similar) 🌍.
-- **🖥️ frontend**:  
+- **🖥️ frontend**  
   - React + Vite + Tailwind CSS UI for users to submit git repos, track deployment, and get live URLs 💻.
 
 ---
@@ -26,17 +29,21 @@ A monorepo for a Vercel-inspired deployment platform. Clone, upload, deploy, and
 - 🌍 **CDN-ready**: request handler can be fronted by CloudFront or similar
 - 🖥️ **Modern UI**: Deploy and manage sites like Vercel
 
+![Screenshot of Deployment UI](./screenshots/screenshot-ui.png)
+
 ---
 
 ## 📁 Directory Structure
 
 ```
+
 vercel/
-  deployment-service/      # Build and deploy logic, Redis queue, R2 integration
-  request-handler-service/ # Serves static sites from R2, CDN edge
-  uploadService/           # Git clone, upload to R2, queue jobs
-  frontend/                # React + Vite + Tailwind web UI
-```
+deployment-service/      # Build and deploy logic, Redis queue, R2 integration
+request-handler-service/ # Serves static sites from R2, CDN edge
+uploadService/           # Git clone, upload to R2, queue jobs
+frontend/                # React + Vite + Tailwind web UI
+
+````
 
 ---
 
@@ -52,12 +59,14 @@ vercel/
 ### 📦 Installation
 
 Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd vercel
-```
+````
 
 Install dependencies for each package:
+
 ```bash
 cd deployment-service && npm install
 cd ../request-handler-service && npm install
@@ -67,12 +76,15 @@ cd ../frontend && npm install
 
 ### 🔑 Environment Variables
 
-Create a `.env` file in each backend service with:
-```
-AWS_ACCESS_KEY_ID=<your-r2-access-key>
-AWS_SECRET_ACCESS_KEY=<your-r2-secret-key>
-S3_ENDPOINT=https://<your-account-id>.r2.cloudflarestorage.com
-S3_BUCKET=<your-bucket-name>
+Create a `.env` file in each backend service:
+
+```env
+# Cloudflare S3-Compatible Storage Configuration
+ACCESS_KEY_ID=<Cloudflare>
+SECRET_ACCESS_KEY=<Cloudflare>
+ENDPOINT=<Cloudflare>
+
+# Redis Configuration
 REDIS_URL=redis://localhost:6379
 ```
 
@@ -83,24 +95,28 @@ REDIS_URL=redis://localhost:6379
 Open separate terminals for each service:
 
 **📤 Upload Service:**
+
 ```bash
 cd uploadService
 npm start
 ```
 
 **⚙️ Deployment Service:**
+
 ```bash
 cd deployment-service
 npm start
 ```
 
 **🌐 Request Handler Service:**
+
 ```bash
 cd request-handler-service
 npm start
 ```
 
 **🖥️ Frontend:**
+
 ```bash
 cd frontend
 npm run dev
@@ -113,22 +129,23 @@ npm run dev
 1. Open the frontend at [http://localhost:5173](http://localhost:5173) 🖥️.
 2. Enter a public git repository URL 🐙 and click "Upload/Deploy".
 3. The backend will:
-   - Clone the repo
-   - Upload files to Cloudflare R2 ☁️
-   - Queue a build job in Redis 🗃️
-   - Build and deploy the site 🚀
-   - Serve the site from R2 via the request handler (CDN-ready) 🌍
+
+   * Clone the repo
+   * Upload files to Cloudflare R2 ☁️
+   * Queue a build job in Redis 🗃️
+   * Build and deploy the site 🚀
+   * Serve the site from R2 via the request handler (CDN-ready) 🌍
 4. Get a live URL for your deployed site.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Backend:** Node.js, TypeScript, Express, Redis 🗃️, Cloudflare R2 ☁️ (S3 API), simple-git 🐙
-- **Frontend:** React, Vite, Tailwind CSS 🖥️
-- **Queue:** Redis 🗃️
-- **Storage:** Cloudflare R2 ☁️
-- **CDN:** CloudFront 🌍 (optional, for production)
+* **Backend:** Node.js, TypeScript, Express, Redis 🗃️, Cloudflare R2 ☁️ (S3 API), simple-git 🐙
+* **Frontend:** React, Vite, Tailwind CSS 🖥️
+* **Queue:** Redis 🗃️
+* **Storage:** Cloudflare R2 ☁️
+* **CDN:** CloudFront 🌍 (optional, for production)
 
 ---
 
@@ -145,3 +162,10 @@ npm run dev
 ## 📄 License
 
 [MIT](LICENSE)
+
+```
+
+---
+
+Let me know if you'd like this saved as a `.md` file or need help embedding specific screenshots.
+```
