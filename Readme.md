@@ -1,6 +1,7 @@
 Here is the **final formatted `README.md` code** with proper image embedding. Replace the placeholder image paths (`./screenshots/...`) with the actual image filenames once they're available:
 
-```md
+```md![Uploading Screenshot 2025-07-02 at 3.53.57 PM.png…]()
+
 # 🚀 Vercel-Like Monorepo
 
 A monorepo for a Vercel-inspired deployment platform. Clone, upload, deploy, and run static sites from any public git repository, with a modern web UI and scalable backend.
@@ -27,7 +28,8 @@ A monorepo for a Vercel-inspired deployment platform. Clone, upload, deploy, and
 - 🗃️ **Redis** queue for scalable, decoupled build/deploy pipeline
 - 🐙 **Git integration**: clone any public repo, auto-deploy
 - 🌍 **CDN-ready**: request handler can be fronted by CloudFront or similar
-- 🖥️ **Modern UI**: Deploy and manage sites like Vercel
+- 🖥️ **Modern UI**: Deploy and manage sites like Ve![Uploading Screenshot 2025-07-02 at 3.54.39 PM.png…]()
+rcel
 
 ![Screenshot of Deployment UI](./screenshots/screenshot-ui.png)
 
@@ -137,7 +139,8 @@ npm run dev
    * Serve the site from R2 via the request handler (CDN-ready) 🌍
 4. Get a live URL for your deployed site.
 
----
+---![Uploading Screenshot 2025-07-02 at 3.54.12 PM.png…]()
+
 
 ## 🛠️ Technologies Used
 
